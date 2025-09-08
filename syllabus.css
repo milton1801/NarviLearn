@@ -123,8 +123,21 @@ a:hover {
   display: flex;
   margin-top: -436px;
 }
-#intro{
+/* before button */
+#before{
+  display: block;
+  margin-top: -383px;
+  margin-left: -6%;
+}
+#before svg{
+fill:black
+}
+#next{
+  margin-top: -6%;
   margin-left: 20%;
+}
+#intro{
+  margin-left: 23%;
   margin-top: -50%;
   display: none;
 }
