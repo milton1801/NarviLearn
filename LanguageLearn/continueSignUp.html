@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="continueSignUp.css">
+  <script src="sign-in.js"></script>
+  <script src="global.js"></script>
+  <link rel="stylesheet" href="global.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="brand">
+   <a href="index.html"><h2>NarviLearn</h2></a>
+  </div>
+  <div id="check">
+    Check your inbox
+  </div>
+  <div id="text">
+    A link has been sent to your Email
+  </div>
+  <button id="bt"><a href="#" id="resend">Resend</a></button>
+  <div class="dot-loader">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  
+</body>
+<!-- Firebase email -->
+<!-- Firebase App (core) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<!-- Firebase Auth -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyDPy6wUxciHk2fAeFmZ9pPtL5sNwwA7gwc",
+  authDomain: "learnnarvi1.firebaseapp.com",
+  projectId: "learnnarvi1",
+  storageBucket: "learnnarvi1.firebasestorage.app",
+  messagingSenderId: "540019310652",
+  appId: "1:540019310652:web:2a8a0ac2b5b8fe30e6c339",
+  measurementId: "G-25RWM41ZWF"
+};
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+</script>
+<form id="signup-form">
+  <input type="email" id="email" placeholder="Enter your email" required />
+  <button type="submit" id="sent">Send</button>
+</form>
+
+<script>
+  const form = document.getElementById("signup-form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+
+    const actionCodeSettings = {
+      url: "http://localhost:5500/continueSN2.html", // ← updated redirect page
+      handleCodeInApp: true,
+    };
+
+    auth.sendSignInLinkToEmail(email, actionCodeSettings)
+      .then(() => {
+        window.localStorage.setItem("emailForSignIn", email);
+      })
+      .catch((error) => {
+        alert("Error sending email: " + error.message);
+      });
+  });
+</script>
+
+
+
+
+</html>

@@ -1,0 +1,15 @@
+/* Light mode default */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: #9ecbff;
+}

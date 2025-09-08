@@ -1,0 +1,205 @@
+body{
+  margin-top: 100px;
+}
+h2{
+  color: black;
+  margin-left: 30px;
+  margin-top: -70px;
+  display:flex;
+}
+a {
+  text-decoration: none !important;
+  
+}
+#p1{
+  font-size: 33px;
+  text-align: center;
+  margin-left: 43.5%;
+  display: flex;
+  margin-top: 100px;
+}
+#list2{
+  list-style: none;
+  margin-left: 37%;
+}
+/* log in button */
+#log{
+margin-top: 2%;
+}
+#in1,#in2{
+  height: 45px;
+  width: 307px;
+  font-size: 15px;
+  border: 1px solid silver;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  text-align: start;
+  padding-left: 5px;
+  gap: 20px;
+  transition: 150ms ease; 
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+#in2{
+  margin-top: 30px;
+  display: flex;
+  cursor:text;
+}
+#in1::placeholder,
+#in2::placeholder {
+  gap: 10px; 
+  padding-left: 10px; 
+}
+#in1:hover {
+  border: 3px solid #DEDEDE ;
+}
+#in2:hover {
+  border: 3px solid #DEDEDE ;
+}
+#list2 a button{
+  height: 45px;
+  width: 315px;
+  font-size: 15px;
+  border: 1px solid silver;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  background-color: #3F00FF;
+  color: white;
+  margin-top: 10px;
+}
+#list2 a button:hover{
+  background-color: blue;
+}
+#do{
+  text-align: center;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+#do a{
+  text-decoration: none;
+  color: #3F00FF;
+}
+#o{
+  text-align: center;
+}
+
+#l1 img{
+  height:20px ;
+  width:20px ;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+/* Google Sign In */
+.g_id_signin {
+  margin-left: 40%;
+  margin-top: 0px;
+  width: 310px;
+  height: 40px;
+}
+.g_id_signin span {
+  text-align: left; 
+  padding-left: 10px; 
+}
+
+
+/* Microsoft Sign In */
+#l2{
+  margin-left: 40%;
+  display: flex;
+  width: 310px;
+  margin-top: 20px;
+  height: 40px;
+  font-size: 14px;  
+  background-color: white;
+  border: 1px solid #DEDEDE;;
+  border-radius: 5px;
+  padding-left: 10px;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+#l2 img{
+  height:20px ;
+  width:20px ;
+  margin-left: -112px;
+  margin-top: 5px;
+  margin-right: 10px;
+  align-items: start;
+  cursor: pointer;
+  display: flex;
+}
+#l2:hover{
+  background-color: whitesmoke;
+}
+#l3 img{
+  height:24px ;
+  width:30px ;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+#l4 img{
+  height:25px ;
+  width:20px ;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* Edit link */
+#edit{
+  font-size: 14px;
+  margin-left: 30%;
+  display: flex;
+  margin-top: -43px;
+  color: #3F00FF;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+} 
+
+/* Password */
+
+  a svg{
+  fill: #3F00FF;
+  margin-left: 30.2%;
+  margin-top: -45px;
+  display: flex;
+  cursor: pointer;
+
+}
+/* Error Email */
+#erro1{
+  margin-left: 10px;
+  margin-top: 25px;
+  font-size: 15px;
+  color: #DC2626;
+  display:none
+}
+#erro2{
+  margin-left: 10px;
+  margin-top: 25px;
+  font-size: 15px;
+  color: #DC2626;
+  display: none;
+}
+/* Error Password */
+#erro3{
+  margin-left: 10px;
+  margin-top: 25px;
+  font-size: 15px;
+  color: #DC2626;
+  display:none
+}
+#erro4{
+  margin-left: 10px;
+  margin-top: 25px;
+  font-size: 15px;
+  color: #DC2626;
+  display: none;
+}
+#loginBtn{
+  height: 45px;
+  width: 315px;
+  font-size: 15px;
+  border: 1px solid silver;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  background-color: #3F00FF;
+  color: white;
+  margin-top: 10px;
+}
