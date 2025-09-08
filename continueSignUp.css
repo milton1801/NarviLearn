@@ -1,0 +1,346 @@
+#brand{
+  color: black;
+  margin-left: 30px;
+}
+#brand a{
+  text-decoration: none;
+  color: black;
+}
+#check{
+  text-align: center;
+  margin-top: 100px;
+  font-size: 25px;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+#text{
+  text-align: center;
+  font-size: 17px;
+  margin-top: 15px;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  color: #36454F;
+}
+#signup-form {
+  display: flex; 
+  margin-left: 40%;
+  margin-top: 10px;
+  display: none;
+}
+#signup-form input {
+  width: 300px; 
+  padding: 10px; 
+  margin: 10px 0; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-sizing: border-box; 
+  font-size: 13px;
+}
+#sent{
+  margin-left: 5px;
+}
+#bt{
+  background-color:transparent;
+  border: none;
+  width: 100px;
+  margin-left: 44.5%;
+}
+  button #resend{
+  color:  #3F00FF;
+  font-size: 18px;
+  margin-left: 48%;
+  margin-top: 20px;
+  display: flex;
+ 
+}
+#bt #resend:hover{
+  color: #6495ED;
+}
+/* Doots */
+.dot-loader {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 40px;
+  gap: 5px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #333;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/* Continue SN2 */
+#bran{
+  color: black;
+  margin-left: 30px;
+
+}
+#bran a{
+  text-decoration: none;
+  color: black;
+}
+#content{
+  margin-left: 43.5%;
+  font-weight: 100;
+  margin-top: 80px;
+  margin-bottom: 50px;
+
+}
+#content h1{
+  font-weight: 100;
+}
+ul{
+  list-style: none;
+  text-align: center;
+
+}
+#Fn{
+  height: 45px;
+  width: 300px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #DEDEDE;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  padding-left: 15px;
+  
+
+}
+#date{
+  height: 45px;
+  width: 300px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #DEDEDE;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  padding-left: 15px;
+}
+
+#con{
+  height: 45px;
+  width: 320px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #DEDEDE;
+  background-color: #3F00FF;
+  color: white;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  margin-left: 40.5%;
+ 
+}
+#con:hover{
+  background-color: blue;
+}
+/* Tenemos que hacer esto */
+#terms{
+  margin-left: 42%;
+  font-size: 12px; 
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  color:#708090;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+}
+ /*  Errors continue 2 */
+ #error1,#error2{
+  margin-left: -12%;
+  font-size: 15px;
+ }
+ #error1{
+  margin-top: -7px;
+  margin-left: -13%;
+ }
+ 
+ /* SURVEY */
+ #survey{
+  display: none;
+ }
+ #beg{
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  color: #3F00FF;
+  margin-top: 70px;
+ }
+ /* Rocket  */
+.rocket-container {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.rocket {
+  font-size: 3rem;
+  animation: launch 1.5s ease-in-out infinite;
+}
+
+@keyframes launch {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-20px); opacity: 0.8; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.rocket {
+  width: 60px; /* or whatever size you like */
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+#take,#skip{
+  height: 35px;
+  width: 110px;
+  border: 1px white;
+  border-radius: 5px;
+  font-size: 13px;
+  margin-left: -4%;
+}
+#take{
+  background-color: #3F00FF;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+#skip{
+  background-color: #6F00FF;
+  color: white;
+}
+#take:hover{
+  background-color:#6495ED;
+}
+#skip:hover{
+  background-color: #3F00FF;
+}
+/* Questions */
+#questions,#questions2,#questions3{
+      width: 400px;
+      height: 500px;
+      background-color: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      margin-left: 38%;
+      margin-top: 100px;
+      display: none;
+    }
+#quest{
+ margin-left: -45px;
+}
+#quest li{
+  font-size: 20px;
+ 
+}
+#q1,#q2,#q3{
+  font-size: 23px;
+}
+#quest li button{
+  height: 60px;
+  width: 410px;
+  font-size: 18px;
+border-radius: 5px;
+border:1px solid white;
+background-color: #DEDEDE;
+margin-bottom: 20px;
+text-align: left;
+padding-left: 20px;
+transform: scale(1.02);
+cursor: pointer;
+}
+#quest li button:hover{
+  background-color: whitesmoke;
+}
+#s{
+  font-size: 25px;
+  margin-left: 50%;
+  color: #3F00FF;
+  margin-top: 10%;
+  display: flex;
+  display: none;
+}
+#nex button{
+  height: 30px;
+  width: 70px;
+  background-color: #3F00FF;
+   color: white;
+   border-radius: 5px;
+   border: none;
+   margin-left: 85%;
+   display: flex;
+   margin-top: -22px;
+   align-items: center;
+   justify-content: center;
+   font-size: 14px;
+}
+#nex button:hover{
+  background-color:blue;
+}
+#last {
+  font-size:22px;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  margin-left: 40%;
+  display: none;
+  margin-top: 80px;
+  color: #333;
+  color: #3F00FF;
+}
+/* Rocket animation */
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200px); /* Move the rocket up */
+  }
+}
+
+.rocket {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+  animation: moveUp 2s linear infinite; /* Apply the animation */
+}
+/* color question */
+ button {
+  background-color: #f0f0f0;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Styling for the active button */
+button.active {
+  background-color: #3F00FF; /* Change to your desired color */
+  color: #fff; /* Optional: Change text color */
+  border-color: #3F00FF; /* Optional: Match border color */
+}

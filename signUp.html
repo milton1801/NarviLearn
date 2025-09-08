@@ -1,0 +1,161 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In Narvi</title>
+  <link rel="stylesheet" href="Sign-in.css">
+  <script src="sign-in.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <a href="index.html"><h2>NarviLearn</h2></a>
+
+  <p id="p1">Create account</p>
+  
+  <ul id="list2">
+    <!-- Email -->
+    <li>
+ <!-- Email Input and Continue Button -->
+<input type="email" id="email"  placeholder="Enter your email" required />
+</li>
+<p id="erro1"> ! Please enter your email address</p> 
+<p id="erro2"> ! Enter a valid email</p>
+<!-- Password -->
+<li>
+ 
+  <a href="#" id="hide">
+    <input type="text" placeholder="Password" id="in2">
+    <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="21px" fill="#e3e3e3">
+      <path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
+    </svg>
+  </a>
+</li>
+<p id="erro5"> Your password must have 8 characters</p>
+<li>
+  <input type="text" placeholder="Re-enter Password" id="in3">
+</li>
+<p id="erro6"> Passwords must match</p> 
+  <!-- Log In Button -->
+  <li id="continue">
+    <a href="continueSignIn.html"><button>Continue</button></a>
+  </li>
+
+<!-- Firebase Scripts -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+
+<!-- Your Custom JavaScript -->
+<script>
+  // Firebase Configuration (replace with your real credentials)
+  const firebaseConfig = {
+  apiKey: "AIzaSyDPy6wUxciHk2fAeFmZ9pPtL5sNwwA7gwc",
+  authDomain: "learnnarvi1.firebaseapp.com",
+  projectId: "learnnarvi1",
+  storageBucket: "learnnarvi1.firebasestorage.app",
+  messagingSenderId: "540019310652",
+  appId: "1:540019310652:web:2a8a0ac2b5b8fe30e6c339",
+  measurementId: "G-25RWM41ZWF"
+};
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  // Add Event Listener to the Continue Button
+  document.getElementById("continue").addEventListener("click", function () {
+    const email = document.getElementById("email").value;
+
+    if (email) {
+      const actionCodeSettings = {
+        url: "http://localhost:5500/finish.html", // Your finish page URL
+        handleCodeInApp: true,
+      };
+
+      // Send Sign-In Link to Email
+      auth.sendSignInLinkToEmail(email, actionCodeSettings)
+        .then(() => {
+          alert("A sign-in link was sent to your email!");
+          localStorage.setItem("emailForSignIn", email); // Store email for later use
+        })
+        .catch((error) => {
+          alert("Error sending email: " + error.message);
+          console.error(error); // Check for any issues in the console
+        });
+    } else {
+      error1.style.display='block'
+    }
+  });
+</script>
+
+
+
+    
+   
+  </ul>
+
+  <p id="do">
+    Already have an account?<a href="log.html"> Log In</a>
+  </p>
+  <p id="o">-or-</p>
+
+  <!-- Google Sign-In -->
+  <div id="g_id_onload"
+       data-client_id="403538978523-r0ibp76pk8qpbieacj0ah2k7roqf1frc.apps.googleusercontent.com"
+       data-callback="handleCredentialResponse">
+  </div>
+  <div class="g_id_signin" data-type="standard"></div>
+
+  <script>
+    function handleCredentialResponse(response) {
+      const idToken = response.credential;
+  
+      const credential = firebase.auth.GoogleAuthProvider.credential(idToken);
+  
+      firebase.auth().signInWithCredential(credential)
+        .then((userCredential) => {
+          console.log("Google Sign-In Success:", userCredential.user);
+          // Optional: Save user info or show a loading screen
+  
+          // ✅ Redirect to your homepage or dashboard
+          window.location.href = "Home.html";
+        })
+        .catch((error) => {
+          console.error("Google Sign-In Error:", error.message);
+          alert("Sign-in failed: " + error.message);
+        });
+    }
+  </script>
+  
+
+  <!-- Microsoft Sign-In -->
+  <script type="text/javascript" src="https://alcdn.msauth.net/browser/2.38.0/js/msal-browser.min.js"></script>
+</body>
+<!-- Microsoft Sign In -->
+<script>
+  const msalConfig = {
+    auth: {
+      clientId:'9fa44615-e495-44ce-8c03-a119fbdb4a5b', 
+      redirectUri: "http://localhost:3000",
+    }
+  };
+
+  const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+  function signIn() {
+    msalInstance.loginPopup({
+      scopes: ["user.read"]  // Básico para obtener info del perfil
+    }).then(response => {
+      console.log("Microsoft Login Exitoso:", response);
+      alert("¡Hola, " + response.account.username + "!");
+    }).catch(error => {
+      console.error("Error en login:", error);
+    });
+  }
+</script>
+
+<button onclick="signIn()" id="l2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="">Sign in with Microsoft</button>
+</html>
+</body>
+</html>

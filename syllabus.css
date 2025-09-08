@@ -1,0 +1,1115 @@
+body{
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  background-color: whitesmoke;
+}
+#navbar h1{
+  color: #3F00FF;
+  margin-left: 35px;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+#l1{
+  display: flex;
+  list-style: none;
+  margin-left: 70%;
+  margin-top: -55px;
+  cursor: pointer;
+}
+#l1 li {
+  font-size: 18px;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-weight:400;
+}
+#l1 li a{
+  text-decoration: none;
+  margin-right: 30px;
+  color: black;
+  cursor: pointer;
+}
+#l1 li a:hover{
+  color: #3F00FF;
+}
+#navbar svg{
+  fill: black;
+  margin-top: -5px;
+  cursor: pointer;
+}
+#navbar svg:hover{
+  fill: #3F00FF;
+}
+/* mini log */
+#minilog {
+  display: none;
+  position: absolute;
+  top: 50px; /* Adjust as needed */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 88%;
+  border-radius: 5px;
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #3F00FF;
+}
+
+/* Show #minilog when hovering over the .profile-link */
+.profile-link:hover #minilog {
+  display: block;
+}
+#topics {
+  background-color: white;
+  border: 2px solid whitesmoke;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 35px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 92%;
+  height: 650px;
+
+}
+
+#topics ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#topics li {
+  display: flex;
+  align-items: center;
+  margin-bottom:10px;
+}
+
+#topics button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: black;
+  height: 70px;
+  border-radius: 10px;
+  margin-bottom: -10px;
+}
+
+#topics button:hover {
+ background-color: whitesmoke;
+}
+
+#topics svg {
+  flex-shrink: 0;
+}
+#topics li{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+#vertical{
+  width: 2px;
+  height: 689px;
+  background-color: whitesmoke;
+  margin-left:16%;
+  display: flex;
+  margin-top: -436px;
+}
+#intro{
+  margin-left: 20%;
+  margin-top: -50%;
+  display: none;
+}
+#ba{
+  font-size: 35px;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+}
+#intro li{
+font-size: 22px;
+font-weight: 300;
+}
+#pro{
+  font-size: 22px;
+  margin-left: 5px;
+}
+/* Progress bar */
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 400px;
+  margin-left: 5px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 15px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #3F00FF;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+#start button{
+background-color: #3F00FF;
+width: 235px;
+color: white;
+height: 50px;
+margin-top: 15px;
+font-size: 20px;
+align-content: center;
+display: flex;
+justify-content: center;
+align-items: center; 
+}
+#start button:hover{
+  background-color: blue;
+}
+#start a{
+  color: white;
+  text-decoration: none;
+}
+#in{
+  margin-left: 20%;
+  margin-top: -50%;
+  font-size: 30px;
+  display: none;
+}
+#in1{
+  font-size: 25px;
+  font-weight: 300;
+}
+#we{
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: 25px;
+  color: #3F00FF;
+}
+#log{
+  margin-left: 25%;
+  font-size: 150px;
+  font-weight: 600;
+  color: #3F00FF;
+  margin-top: -15%;
+}
+/* rocket */
+img{
+  height: 400px;
+  width: 500px;
+  margin-top: -10%;
+  margin-left: 250px;
+}
+/* Vocabulary */
+#vocabulary{
+  margin-left: 20%;
+  margin-top: -50%;
+  display: none;
+}
+#vocabulary ul{
+  font-size: 22px;
+  font-weight: 300;
+}
+#starts button{
+  background-color: #3F00FF;
+  width: 235px;
+  color: white;
+  height: 50px;
+  margin-top: 10px;
+  font-size: 20px;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  }
+  #starts button:hover{
+    background-color: blue;
+  }
+  #starts a{
+    color: white;
+    text-decoration: none;
+  }
+  /* grammar */
+#grammar{
+  margin-left: 20%;
+  margin-top: -50%;
+  display: none;
+}
+#grammar ul{
+  font-size: 22px;
+  font-weight: 300;
+}
+#starts button{
+  background-color: #3F00FF;
+  width: 235px;
+  color: white;
+  height: 50px;
+  margin-top: 10px;
+  font-size: 20px;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  }
+  #starts button:hover{
+    background-color: blue;
+  }
+  #starts a{
+    color: white;
+    text-decoration: none;
+  }
+    /* listen */
+#listen{
+  margin-left: 20%;
+  margin-top: -50%;
+  display: none;
+}
+#listen ul{
+  font-size: 22px;
+  font-weight: 300;
+}
+#starts button{
+  background-color: #3F00FF;
+  width: 235px;
+  color: white;
+  height: 50px;
+  margin-top: 10px;
+  font-size: 20px;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  }
+  #starts button:hover{
+    background-color: blue;
+  }
+  #starts a{
+    color: white;
+    text-decoration: none;
+  }
+      /* reading */
+#read{
+  margin-left: 20%;
+  margin-top: -50%;
+  display: none;
+}
+#read ul{
+  font-size: 22px;
+  font-weight: 300;
+}
+#starts button{
+  background-color: #3F00FF;
+  width: 235px;
+  color: white;
+  height: 50px;
+  margin-top: 10px;
+  font-size: 20px;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  }
+  #starts button:hover{
+    background-color: blue;
+  }
+  #starts a{
+    color: white;
+    text-decoration: none;
+  }
+  /* INSIDE */
+  #B{
+    margin-left: 20%;
+    margin-top: -650px;
+    display: none; 
+  }
+  #TB{
+
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: -47%;
+  }
+  #b li{
+
+    font-size: 27px;
+    font-weight: 300;
+  }
+  #trans{
+
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  #bp1{
+
+    font-size: 30px;
+    margin-top: 0px;
+  }
+  #bp2 {
+    display: flex;
+
+  }
+  #bp2 li{
+    margin-left: 0px;
+    margin-right: 20px;
+    margin-top: -10px;
+  }
+  #bp2 button{
+    border: 1px solid silver;
+    width: 145px;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 300;
+    border-radius: 15px;
+    height: 65px;
+    background-color: white;
+  }
+  #bp2 button:hover{
+    background-color: whitesmoke;
+  }
+#ca button{
+  background-color: #3F00FF;
+  height: 60px;
+  width: 200px;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 21px;
+}
+#ca button:hover{
+  background-color: blue;
+}
+/* Numero 2 */
+#C{
+  margin-left: 20%;
+  margin-top: -650px;
+  display: none;
+}
+#TC{
+
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -47%;
+}
+#C li{
+
+  font-size: 27px;
+  font-weight: 300;
+}
+#trans{
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+#cp1{
+
+  font-size: 30px;
+  margin-top: 0px;
+}
+#cp2 {
+  display: flex;
+
+}
+#cp2 li{
+  margin-left: 0px;
+  margin-right: 20px;
+  margin-top: -10px;
+}
+#cp2 button{
+  border: 1px solid silver;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 300;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+}
+#cp2 button:hover{
+  background-color: whitesmoke;
+}
+#ca1 button{
+background-color: #3F00FF;
+height: 60px;
+width: 200px;
+margin-top: 30px;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 21px;
+}
+#ca1 button:hover{
+background-color: blue;
+}
+/* Numero 3 */
+#D{
+  margin-left:22%;
+  margin-top: -665px;
+  display: none;
+
+}
+#TD{
+
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -47%;
+}
+#b{
+  font-size: 27px;
+  font-weight: 300;
+}
+#trans{
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+#dp1{
+
+  font-size: 30px;
+  margin-top: 0px;
+}
+#dp2 {
+  display: flex;
+  list-style: none;
+}
+#dp2 li{
+  margin-left: -35px;
+  margin-right: 50px;
+  margin-top: -10px;
+}
+#dp2 button{
+  border: 1px solid silver;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 300;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+}
+#dp2 button:hover{
+  background-color: whitesmoke;
+}
+#da1 button{
+background-color: #3F00FF;
+height: 60px;
+width: 200px;
+margin-top: 30px;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 21px;
+border-radius: 15px;
+border: none;
+margin-top: 5px;
+}
+#da1 button:hover{
+background-color: blue;
+}
+/* Numero 4 */
+#F{
+  margin-left:22%;
+  margin-top: -665px;
+  display: none;
+}
+#TF{
+
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -47%;
+}
+#f{
+  font-size: 27px;
+  font-weight: 300;
+}
+#trans{
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+#fp1{
+
+  font-size: 30px;
+  margin-top: 0px;
+}
+#fp2 {
+  display: flex;
+  list-style: none;
+}
+#fp2 li{
+  margin-left: -35px;
+  margin-right: 50px;
+  margin-top: -10px;
+}
+#fp2 button{
+  border: 1px solid silver;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 300;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+}
+#fp2 button:hover{
+  background-color: whitesmoke;
+}
+#fa1 button{
+background-color: #3F00FF;
+height: 60px;
+width: 200px;
+margin-top: 30px;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 21px;
+border-radius: 15px;
+border: none;
+margin-top: 5px;
+}
+#fa1 button:hover{
+background-color: blue;
+}
+
+/* Numero 5 */
+#G{
+  margin-left:22%;
+  margin-top: -665px;
+  display: none;
+}
+#TG{
+
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -47%;
+}
+#g{
+  font-size: 27px;
+  font-weight: 300;
+}
+#trans{
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+#gp1{
+
+  font-size: 30px;
+  margin-top: 0px;
+}
+#gp2 {
+  display: flex;
+  list-style: none;
+}
+#gp2 li{
+  margin-left: -35px;
+  margin-right: 50px;
+  margin-top: -10px;
+}
+#gp2 button{
+  border: 1px solid silver;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 300;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+}
+#gp2 button:hover{
+  background-color: whitesmoke;
+}
+#ga1 button{
+background-color: #3F00FF;
+height: 60px;
+width: 200px;
+margin-top: 30px;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 21px;
+border-radius: 15px;
+border: none;
+margin-top: 5px;
+}
+#ga1 button:hover{
+background-color: blue;
+}
+/* Numero 6 */
+#H{
+  margin-left:22%;
+  margin-top: -665px;
+  display: none;
+}
+#TH{
+
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -47%;
+}
+#h{
+  font-size: 27px;
+  font-weight: 300;
+}
+#trans{
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+#hp1{
+
+  font-size: 30px;
+  margin-top: 0px;
+}
+#hp2 {
+  display: flex;
+  list-style: none;
+}
+#hp2 li{
+  margin-left: -35px;
+  margin-right: 50px;
+  margin-top: -10px;
+}
+#hp2 button{
+  border: 1px solid silver;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 300;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+}
+#hp2 button:hover{
+  background-color: whitesmoke;
+}
+#ha1 button{
+background-color: #3F00FF;
+height: 60px;
+width: 200px;
+margin-top: 30px;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 21px;
+border-radius: 15px;
+border: none;
+margin-top: 5px;
+}
+#ha1 button:hover{
+background-color: blue;
+}
+/* Numero 7 */
+#I{
+  margin-left:22%;
+  margin-top: -665px;
+  display: none;
+}
+#IH{
+
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -47%;
+}
+#i{
+  font-size: 27px;
+  font-weight: 300;
+}
+#trans{
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+#ip1{
+
+  font-size: 30px;
+  margin-top: 0px;
+}
+#ip2 {
+  display: flex;
+  list-style: none;
+}
+#ip2 li{
+  margin-left: -35px;
+  margin-right: 50px;
+  margin-top: -10px;
+}
+#ip2 button{
+  border: 1px solid silver;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 300;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+}
+#ip2 button:hover{
+  background-color: whitesmoke;
+}
+#ia1 button{
+background-color: #3F00FF;
+height: 60px;
+width: 200px;
+margin-top: 30px;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 21px;
+border-radius: 15px;
+border: none;
+margin-top: 5px;
+}
+#ia1 button:hover{
+background-color: blue;
+}
+/* Numero 8 */
+#J{
+  margin-left:22%;
+  margin-top: -665px;
+  display: none;
+}
+#JH{
+
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -47%;
+}
+#j{
+  font-size: 27px;
+  font-weight: 300;
+}
+#trans{
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+#jp1{
+
+  font-size: 30px;
+  margin-top: 0px;
+}
+#jp2 {
+  display: flex;
+  list-style: none;
+}
+#jp2 li{
+  margin-left: -35px;
+  margin-right: 50px;
+  margin-top: -10px;
+}
+#jp2 button{
+  border: 1px solid silver;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 300;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+}
+#jp2 button:hover{
+  background-color: whitesmoke;
+}
+#ja1 button{
+background-color: #3F00FF;
+height: 60px;
+width: 200px;
+margin-top: 30px;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 21px;
+border-radius: 15px;
+border: none;
+margin-top: 5px;
+}
+#ja1 button:hover{
+background-color: blue;
+}
+/* Numero 9 */
+#K{
+  margin-left:22%;
+  margin-top: -665px;
+  display: none;
+}
+#KH{
+
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -47%;
+}
+#k{
+  font-size: 27px;
+  font-weight: 300;
+}
+#trans{
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+#kp1{
+
+  font-size: 30px;
+  margin-top: 0px;
+}
+#kp2 {
+  display: flex;
+  list-style: none;
+}
+#kp2 li{
+  margin-left: -35px;
+  margin-right: 50px;
+  margin-top: -10px;
+}
+#kp2 button{
+  border: 1px solid silver;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 300;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+}
+#kp2 button:hover{
+  background-color: whitesmoke;
+}
+#ka1 button{
+background-color: #3F00FF;
+height: 60px;
+width: 200px;
+margin-top: 30px;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 21px;
+border-radius: 15px;
+border: none;
+margin-top: 5px;
+}
+#ka1 button:hover{
+background-color: blue;
+}
+/* Numero 10 */
+#L{
+  margin-left:22%;
+  margin-top: -665px;
+  display: none;
+}
+#LH{
+
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -47%;
+}
+#l{
+  font-size: 27px;
+  font-weight: 300;
+}
+#trans{
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+#lp1{
+
+  font-size: 30px;
+  margin-top: 0px;
+}
+#lp2 {
+  display: flex;
+  list-style: none;
+}
+#lp2 li{
+  margin-left: -35px;
+  margin-right: 50px;
+  margin-top: -10px;
+}
+#lp2 button{
+  border: 1px solid silver;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 300;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+}
+#lp2 button:hover{
+  background-color: whitesmoke;
+}
+#la1 button{
+background-color: #3F00FF;
+height: 60px;
+width: 200px;
+margin-top: 30px;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 21px;
+border-radius: 15px;
+border: none;
+margin-top: 5px;
+}
+#la1 button:hover{
+background-color: blue;
+}
+/* Numero 11 */
+#M{
+  margin-left:22%;
+  margin-top: -665px;
+  display: block;
+}
+#MH{
+
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -47%;
+}
+#m{
+  font-size: 27px;
+  font-weight: 300;
+}
+#trans{
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+#mp1{
+
+  font-size: 30px;
+  margin-top: 0px;
+}
+#mp2 {
+  display: flex;
+  list-style: none;
+}
+#mp2 li{
+  margin-left: -35px;
+  margin-right: 50px;
+  margin-top: -10px;
+}
+#mp2 button{
+  border: 1px solid silver;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 300;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+}
+#mp2 button:hover{
+  background-color: whitesmoke;
+}
+#ma1 button{
+background-color: #3F00FF;
+height: 60px;
+width: 200px;
+margin-top: 30px;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 21px;
+border-radius: 15px;
+border: none;
+margin-top: 5px;
+}
+#ma1 button:hover{
+background-color: blue;
+}
+/* Numero 12 */
+#O{
+  margin-left:22%;
+  margin-top: -665px;
+  display: block;
+}
+#OH{
+
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: -47%;
+}
+#o{
+  font-size: 27px;
+  font-weight: 300;
+}
+#trans{
+
+  font-size: 30px;
+  margin-top: 20px;
+}
+#op1{
+
+  font-size: 30px;
+  margin-top: 0px;
+}
+#op2 {
+  display: flex;
+  list-style: none;
+}
+#op2 li{
+  margin-left: -35px;
+  margin-right: 50px;
+  margin-top: -10px;
+}
+#op2 button{
+  border: 1px solid silver;
+  width: 145px;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  font-weight: 300;
+  border-radius: 15px;
+  height: 65px;
+  background-color: white;
+}
+#op2 button:hover{
+  background-color: whitesmoke;
+}
+#oa1 button{
+background-color: #3F00FF;
+height: 60px;
+width: 200px;
+margin-top: 30px;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 21px;
+border-radius: 15px;
+border: none;
+margin-top: 5px;
+}
+#oa1 button:hover{
+background-color: blue;
+}

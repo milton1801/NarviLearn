@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tell us about you</title>
+  <link rel="stylesheet" href="continueSignUp.css">
+  <script src="continueSignIn.js"></script>
+  <script src="global.js"></script>
+  <link rel="stylesheet" href="global.css">
+</head>
+<div id="bran">
+  <a href="index.html"><h2>NarviLearn</h2></a>
+</div>
+<div id="content">
+  <p><h1>Your information!</h1></p>
+</div>
+<ul>
+<li><input type="text" placeholder="Full name" id="Fn"></li>
+<p id="error1" style="color:#DC2626"></p>
+
+<input type="text" id="date" placeholder="MM/DD/YYYY" oninput="formatDate()" />
+<p id="error2" style="color:#DC2626"></p>
+
+<script>
+  function formatDate() {
+    const input = document.getElementById("date");
+    let value = input.value.replace(/\D/g, ''); // Remove all non-digit characters
+
+    if (value.length <= 2) {
+      input.value = value; // For mm
+    } else if (value.length <= 4) {
+      input.value = value.slice(0, 2) + '/' + value.slice(2); // For mm/dd
+    } else {
+      input.value = value.slice(0, 2) + '/' + value.slice(2, 4) + '/' + value.slice(4, 8); // For mm/dd/yyyy
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const continueButton = document.getElementById('con');
+    continueButton.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Clear previous error messages
+      document.getElementById('error1').textContent = '';
+      document.getElementById('error2').textContent = '';
+
+      // Validate Full Name
+      const fullName = document.getElementById('Fn').value.trim();
+      let isValid = true;
+
+      if (!fullName) {
+        document.getElementById('error1').textContent = '!Type your name';
+        isValid = false;
+      }
+
+      // Validate Date of Birth
+      const dateInput = document.getElementById('date').value.trim();
+      if (dateInput) {
+        const [month, day, year] = dateInput.split('/').map(Number);
+        const birthDate = new Date(year, month - 1, day);
+        const today = new Date();
+        const age = today.getFullYear() - birthDate.getFullYear();
+        const isBirthdayPassed =
+          today.getMonth() > birthDate.getMonth() ||
+          (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+
+        if (!isBirthdayPassed) {
+          age--;
+        }
+
+        if (age < 5) {
+          document.getElementById('error2').textContent = 'You have to be over 5';
+          isValid = false;
+        }
+      } else {
+        document.getElementById('error2').textContent = 'Enter a valid date';
+        isValid = false;
+      }
+
+      // If valid, hide inputs, terms, and button, and show the survey section
+      if (isValid) {
+        document.getElementById('content').style.display = 'none';
+        document.getElementById('Fn').style.display = 'none'; // Hide Full Name input
+        document.getElementById('date').style.display = 'none'; // Hide Date input
+        document.getElementById('terms').style.display = 'none'; // Hide terms paragraph
+        document.getElementById('con').style.display = 'none'; // Hide Continue button
+        document.getElementById('survey').style.display = 'block'; // Show the survey section
+      }
+    });
+  });
+</script>
+</ul>
+<p id="terms"> Click 'Continue' if you agree with
+our Terms<br> and have read our Policy.
+</p>
+<button id="con">
+  Continue
+</button>
+<!-- SURVEY -->
+<body>
+  <div id="survey">
+    <p id="beg"> 
+      Welcome aboard! Let’s personalize your journey 🌟
+    </p>
+
+  <div class="welcome-message">
+    <div class="rocket-container">
+      <div class="rocket">🚀</div>
+    </div>
+  </div>
+  <div>
+    <ul id="botones">
+      <li><a href="#"><button id="take">Take Survey</button></a></li>
+      <li><a href="Home.html"><button id="skip">Skip</button></a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="questions" class="question">
+  <p id="q1">What is your Main Goal?</p>
+  <ul id="quest">
+    <li><button class="response">Conversational fluency</button></li>
+    <li><button class="response">Travel</button></li>
+    <li><button class="response">Work/Study</button></li>
+    <li><button class="response">Just for fun</button></li>
+  </ul>
+  <div id="nex">
+    <button id="next1" class="next" disabled>Next</button>
+  </div>
+</div>
+
+<!-- Question 2 -->
+<div id="questions2" class="question" style="display: none;">
+  <p id="q2">How many minutes do you want to spend?</p>
+  <ul id="quest">
+    <li><button class="response">5 min</button></li>
+    <li><button class="response">10 min</button></li>
+    <li><button class="response">15 min</button></li>
+    <li><button class="response">20 min or more</button></li>
+  </ul>
+  <div id="nex">
+    <button id="next2" class="next" disabled>Next</button>
+  </div>
+</div>
+
+<!-- Question 3 -->
+<div id="questions3" class="question" style="display: none;">
+  <p id="q3">What times work best for you?</p>
+  <ul id="quest">
+    <li><button class="response">Morning</button></li>
+    <li><button class="response">Noon</button></li>
+    <li><button class="response">Afternoon</button></li>
+    <li><button class="response">Night</button></li>
+  </ul>
+  <div id="nex">
+    <button id="finish" class="next" disabled>Finish</button>
+  </div>
+</div>
+<div id="last">
+  <p>🎉 Awesome! Your journey is set. <br>
+    Let’s get started and reach your goals!</p>
+</div>
+
+</body>
+</html

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Finish Sign In</title></head>
+<body>
+  <h1>Signing you in...</h1>
+  <script>
+    const email = localStorage.getItem("emailForSignIn");
+
+    if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
+      firebase.auth().signInWithEmailLink(email, window.location.href)
+        .then((result) => {
+          alert("Welcome, you're signed in!");
+          localStorage.removeItem("emailForSignIn");
+        })
+        .catch((error) => {
+          alert("Sign-in error: " + error.message);
+        });
+    }
+  </script>
+</body>
+</html>
