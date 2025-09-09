@@ -334,7 +334,9 @@
   <li id="bp6"><button class="option">Gracias</button></li>
 </ul>
 <div id="ca"><button id="checkAnswerBtn1">Check Answer</button></div>
-<button id="next">Next</button>
+<div id="nt">
+  <button id="next">Next</button>
+</div>
 <p id="result"></p>
 </div>
 <!-- Numero 2  -->
@@ -357,7 +359,9 @@
 
   </ul>
   <div id="ca1"><button id="checkAnswerBtn2">Check Answer</button></div>
-  <button id="next">Next</button>
+  <div id="nt">
+    <button id="next">Next</button>
+  </div>
   <p id="result"></p>
 </div>
 </div>
@@ -384,7 +388,9 @@
   <div id="da1">
     <button id="checkAnswerBtn3">Check Answer</button>
   </div>
-  <button id="next">Next</button>
+  <div id="nt">
+    <button id="next">Next</button>
+  </div>
   
   <p id="result"></p>
 </div>
@@ -412,7 +418,9 @@
   <div id="fa1">
     <button id="checkAnswerBtn4">Check Answer</button>
   </div>
-  <button id="next">Next</button>
+  <div id="nt">
+    <button id="next">Next</button>
+  </div>
   <p id="result"></p>
 </div>
 
@@ -438,7 +446,9 @@
   <div id="ga1">
     <button id="checkAnswerBtn5">Check Answer</button>
   </div>
-  <button id="next">Next</button>
+  <div id="nt">
+    <button id="next">Next</button>
+  </div>
   <p id="result"></p>
 </div>
 
@@ -464,7 +474,9 @@
   <div id="ha1">
     <button id="checkAnswerBtn6">Check Answer</button>
   </div>
-  <button id="next">Next</button>
+  <div id="nt">
+    <button id="next">Next</button>
+  </div>
   <p id="result"></p>
 </div>
 
@@ -490,7 +502,9 @@
   <div id="ia1">
     <button id="checkAnswerBtn7">Check Answer</button>
   </div>
-  <button id="next">Next</button>
+  <div id="nt">
+    <button id="next">Next</button>
+  </div>
   <p id="result"></p>
 </div>
 <!-- Numero 8 Common Expressions -->
@@ -516,7 +530,9 @@
   <div id="ja1">
     <button id="checkAnswerBtn8">Check Answer</button>
   </div>
-  <button id="next">Next</button>
+  <div id="nt">
+    <button id="next">Next</button>
+  </div>
   <p id="result"></p>
 </div>
 <!-- Numero 9 Common Expressions -->
@@ -542,7 +558,9 @@
   <div id="ka1">
     <button id="checkAnswerBtn9">Check Answer</button>
   </div>
-  <button id="next">Next</button>
+  <div id="nt">
+    <button id="next">Next</button>
+  </div>
   <p id="result"></p>
 </div>
 <!-- Numero 10 Common Expressions -->
@@ -569,7 +587,9 @@
   <div id="la1">
     <button id="checkAnswerBtn10">Check Answer</button>
   </div>
-  <button id="next">Next</button>
+  <div id="nt">
+    <button id="next">Next</button>
+  </div>
   <p id="result"></p>
   </div>
   <!-- Numero 11 Common Expressions -->
@@ -596,7 +616,9 @@
   <div id="ma1">
     <button id="checkAnswerBtn11">Check Answer</button>
   </div>
-  <button id="next">Next</button>
+  <div id="nt">
+    <button id="next">Next</button>
+  </div>
 
   
   <p id="result"></p>
@@ -626,660 +648,45 @@
     <div id="oa1">
       <button id="checkAnswerBtn12">Check Answer</button>
     </div>
+    <div id="nt">
     <button id="next">Next</button>
+  </div>
     
     <p id="result"></p>
   </div>
   
 
 <!-- Correct Answer D -->
-
-</script>
-<!-- All the script -->
 <script>
+  /* ================== PROGRESS ================== */
   let correctCount = 0;
-const totalQuestions = 12;
-
-const progressFill = document.querySelector('.progress-fill');
-const progressText = document.querySelector('.progress-text');
-
-function updateProgress() {
-  const percent = Math.round((correctCount / totalQuestions) * 100);
-  progressFill.style.width = percent + "%";
-  progressText.textContent = percent + "%";
-}
-
-  // === Section B to C ===
-  const sectionB = document.getElementById('B');
-  const sectionC = document.getElementById('C');
-  const sectionD = document.getElementById('D');
-  const sectionF = document.getElementById('F');
-  const sectionG = document.getElementById('G');
-  const sectionH = document.getElementById('H');
-  const sectionI = document.getElementById('I');
-  const sectionJ = document.getElementById('J');
-  const sectionK = document.getElementById('K');
-  const sectionL = document.getElementById('L');
-  const sectionM = document.getElementById('M');
-  const sectionO = document.getElementById('O');
-  const introSection = document.getElementById('intro');
-  const startBtn = document.getElementById('startBtn');
-
-  const resultB = sectionB?.querySelector('#result');
-  const checkAnswerBtnB = sectionB?.querySelector('#checkAnswerBtn1');
-  const correctBtnB = document.querySelector('#bp5 button');
-  let selectedBtnB = null;
-  let isCorrectB = false;
-
-  const resultC = sectionC?.querySelector('#result');
-  const checkAnswerBtnC = sectionC?.querySelector('#checkAnswerBtn2');
-  const correctBtnC = sectionC?.querySelector('[data-correct="true"]');
-  let selectedBtnC = null;
-  let isCorrectC = false;
-
-  const resultD = sectionD?.querySelector('#result');
-  const checkAnswerBtnD = sectionD?.querySelector('#checkAnswerBtn3');
-  let selectedBtnD = null;
-  let isCorrectD = false;
-
-  const resultF = sectionF?.querySelector('#result');
-  const checkAnswerBtnF = sectionF?.querySelector('#checkAnswerBtn4');
-  let selectedBtnF = null;
-  let isCorrectF = false;
-
-  const resultG = sectionG?.querySelector('#result');
-  const checkAnswerBtnG = sectionG?.querySelector('#checkAnswerBtn5');
-  let selectedBtnG = null;
-  let isCorrectG = false;
-
-  const resultH = sectionH?.querySelector('#result');
-  const checkAnswerBtnH = sectionH?.querySelector('#checkAnswerBtn6');
-  let selectedBtnH = null;
-  let isCorrectH = false;
-
-  const resultI = sectionI?.querySelector('#result');
-  const checkAnswerBtnI = sectionI?.querySelector('#checkAnswerBtn7');
-  let selectedBtnI = null;
-  let isCorrectI = false;
-
-  const resultJ = sectionJ?.querySelector('#result');
-  const checkAnswerBtnJ = sectionJ?.querySelector('#checkAnswerBtn8');
-  let selectedBtnJ = null;
-  let isCorrectJ = false;
-
-  const resultK = sectionK?.querySelector('#result');
-  const checkAnswerBtnK = sectionK?.querySelector('#checkAnswerBtn9');
-  let selectedBtnK = null;
-  let isCorrectK = false;
-
-  const resultL = sectionL?.querySelector('#result');
-  const checkAnswerBtnL = sectionL?.querySelector('#checkAnswerBtn10');
-  let selectedBtnL = null;
-  let isCorrectL = false;
-
-  const resultM = sectionM?.querySelector('#result');
-  const checkAnswerBtnM = sectionM?.querySelector('#checkAnswerBtn11');
-  let selectedBtnM = null;
-  let isCorrectM = false;
-
-  const resultO = sectionO?.querySelector('#result');
-  const checkAnswerBtnO = sectionO?.querySelector('#checkAnswerBtn12');
-  let selectedBtnO = null;
-  let isCorrectO = false;
-
-  if (sectionB) sectionB.style.display = 'none';
-  if (sectionC) sectionC.style.display = 'none';
-  if (sectionD) sectionD.style.display = 'none';
-  if (sectionF) sectionF.style.display = 'none';
-  if (sectionG) sectionG.style.display = 'none';
-  if (sectionH) sectionH.style.display = 'none';
-  if (sectionI) sectionI.style.display = 'none';
-  if (sectionJ) sectionJ.style.display = 'none';
-  if (sectionL) sectionL.style.display = 'none';
-  if (sectionM) sectionM.style.display = 'none';
-  if (sectionO) sectionO.style.display = 'none';
-
-  // Start button logic
-  if (startBtn) {
-    startBtn.addEventListener('click', () => {
-      if (introSection) introSection.style.display = 'none';
-      if (sectionB) sectionB.style.display = 'block';
-    });
+  const totalQuestions = 12;
+  const progressFill = document.querySelector('.progress-fill');
+  const progressText = document.querySelector('.progress-text');
+  
+  function updateProgress() {
+    const percent = Math.round((correctCount / totalQuestions) * 100);
+    if (progressFill) progressFill.style.width = percent + "%";
+    if (progressText) progressText.textContent = percent + "%";
   }
-
-  if (sectionB) {
-    sectionB.querySelectorAll('.option').forEach(button => {
-      button.addEventListener('click', () => {
-        selectedBtnB = button;
-        sectionB.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-        button.style.backgroundColor = '#d0eaff';
-      });
+  
+  /* ================== TOP TABS (Intro/Vocab/etc) ================== */
+  function showTopSection(targetId){
+    ['intro','in','vocabulary','grammar','listen','read'].forEach(id=>{
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.style.display = (id === targetId) ? 'block' : 'none';
     });
+    hideAllQuizzes();
   }
-
-  if (checkAnswerBtnB) {
-  checkAnswerBtnB.addEventListener('click', () => {
-    if (!selectedBtnB) return;
-
-    if (selectedBtnB === correctBtnB) {
-      resultB.textContent = '✅ Correct!';
-      resultB.style.color = 'green';
-      selectedBtnB.style.backgroundColor = '#c0ffc0';
-      isCorrectB = true;
-
-      correctCount++;       // count this correct answer
-      updateProgress();     // refresh progress bar
-
-      setTimeout(() => {
-        sectionB.style.display = 'none';
-        sectionC.style.display = 'block';
-      }, 1000);
-    } else {
-      resultB.textContent = '❌ Try again.';
-      resultB.style.color = 'red';
-      selectedBtnB.style.backgroundColor = '#ffc0c0';
-    }
-  });
-}
-
-
-  if (sectionC) {
-    sectionC.querySelectorAll('.option').forEach(button => {
-      button.addEventListener('click', () => {
-        selectedBtnC = button;
-        sectionC.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-        button.style.backgroundColor = '#d0eaff';
-      });
-    });
-  }
-
-  if (checkAnswerBtnC) {
-    checkAnswerBtnC.addEventListener('click', () => {
-      if (!selectedBtnC) return;
-
-      if (selectedBtnC === correctBtnC) {
-        resultC.textContent = '✅ Correct!';
-        resultC.style.color = 'green';
-        selectedBtnC.style.backgroundColor = '#c0ffc0';
-        isCorrectC = true;
-        correctCount++;       // count this correct answer
-       updateProgress();     // refresh progress bar
-
-        setTimeout(() => {
-          sectionC.style.display = 'none';
-          sectionD.style.display = 'block';
-        }, 1000);
-      } else {
-        resultC.textContent = '❌ Try again.';
-        resultC.style.color = 'red';
-        selectedBtnC.style.backgroundColor = '#ffc0c0';
-      }
-    });
-  }
-
-  if (sectionD) {
-    sectionD.querySelectorAll('.option').forEach(button => {
-      button.addEventListener('click', () => {
-        selectedBtnD = button;
-        sectionD.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-        button.style.backgroundColor = '#d0eaff';
-      });
-    });
-  }
-
-  if (checkAnswerBtnD) {
-    checkAnswerBtnD.addEventListener('click', () => {
-      if (!selectedBtnD) return;
-
-      if (selectedBtnD.dataset.correct === "true") {
-        resultD.textContent = '✅ Correct!';
-        resultD.style.color = 'green';
-        selectedBtnD.style.backgroundColor = '#c0ffc0';
-        isCorrectD = true;
-        
-        correctCount++;       // count this correct answer
-        updateProgress();     // refresh progress bar
-
-        setTimeout(() => {
-          sectionD.style.display = 'none';
-          sectionF.style.display = 'block';;
-        }, 1000);
-      } else {
-        resultD.textContent = '❌ Try again.';
-        resultD.style.color = 'red';
-        selectedBtnD.style.backgroundColor = '#ffc0c0';
-      }
-    });
-  }
-
-  if (sectionF) {
-  console.log('sectionF exists:', sectionF);
-  sectionF.querySelectorAll('.option').forEach(button => {
-    button.addEventListener('click', () => {
-      selectedBtnF = button;
-      console.log('Button clicked:', selectedBtnF);
-      sectionF.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-      button.style.backgroundColor = '#d0eaff';
-    });
-  });
-}
-
-if (checkAnswerBtnF) {
-  console.log('checkAnswerBtnF exists:', checkAnswerBtnF);
-  checkAnswerBtnF.addEventListener('click', () => {
-    console.log('Check Answer button clicked');
-    if (!selectedBtnD) {
-      console.log('selectedBtnD is not set');
-      return;
-    }
-
-    console.log('selectedBtnF:', selectedBtnF);
-    console.log('selectedBtnF.dataset.correct:', selectedBtnF?.dataset.correct);
-
-    if (selectedBtnF.dataset.correct === "true") {
-      resultF.textContent = '✅ Correct!';
-      resultF.style.color = 'green';
-      selectedBtnF.style.backgroundColor = '#c0ffc0';
-      isCorrectD = true;
-
-      correctCount++;       // count this correct answer
-      updateProgress();     // refresh progress bar
-
-      setTimeout(() => {
-        console.log('Switching sections');
-        sectionF.style.display = 'none';
-        sectionG.style.display = 'block';
-      }, 1000);
-    } else {
-      resultF.textContent = '❌ Try again.';
-      resultF.style.color = 'red';
-      selectedBtnF.style.backgroundColor = '#ffc0c0';
-    }
-  });
-}
-
-
-if (sectionG) {
-  console.log('sectionG exists:', sectionG);
-  sectionG.querySelectorAll('.option').forEach(button => {
-    button.addEventListener('click', () => {
-      selectedBtnG = button;
-      console.log('Button clicked:', selectedBtnG);
-      sectionG.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-      button.style.backgroundColor = '#d0eaff';
-    });
-  });
-}
-
-if (checkAnswerBtnF) {
-  console.log('checkAnswerBtnF exists:', checkAnswerBtnG);
-  checkAnswerBtnG.addEventListener('click', () => {
-    console.log('Check Answer button clicked');
-    if (!selectedBtnG) {
-      console.log('selectedBtnG is not set');
-      return;
-    }
-
-    console.log('selectedBtnG:', selectedBtnF);
-    console.log('selectedBtnF.dataset.correct:', selectedBtnF?.dataset.correct);
-
-    if (selectedBtnG.dataset.correct === "true") {
-      resultG.textContent = '✅ Correct!';
-      resultG.style.color = 'green';
-      selectedBtnG.style.backgroundColor = '#c0ffc0';
-      isCorrectG = true;
-
-      correctCount++;       // count this correct answer
-      updateProgress();     // refresh progress bar
-
-      setTimeout(() => {
-        console.log('Switching sections');
-        sectionG.style.display = 'none';
-        sectionH.style.display = 'block';
-      }, 1000);
-    } else {
-      resultG.textContent = '❌ Try again.';
-      resultG.style.color = 'red';
-      selectedBtnF.style.backgroundColor = '#ffc0c0';
-    }
-  });
-}
-
-if (sectionH) {
-  console.log('sectionH exists:', sectionH);
-  sectionH.querySelectorAll('.option').forEach(button => {
-    button.addEventListener('click', () => {
-      selectedBtnH = button;
-      console.log('Button clicked:', selectedBtnH);
-      sectionH.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-      button.style.backgroundColor = '#d0eaff';
-    });
-  });
-}
-
-if (checkAnswerBtnH) {
-  console.log('checkAnswerBtnH exists:', checkAnswerBtnH);
-  checkAnswerBtnH.addEventListener('click', () => {
-    console.log('Check Answer button clicked');
-    if (!selectedBtnH) {
-      console.log('selectedBtnG is not set');
-      return;
-    }
-
-    console.log('selectedBtnH:', selectedBtnH);
-    console.log('selectedBtnH.dataset.correct:', selectedBtnH?.dataset.correct);
-
-    if (selectedBtnH.dataset.correct === "true") {
-      resultH.textContent = '✅ Correct!';
-      resultH.style.color = 'green';
-      selectedBtnH.style.backgroundColor = '#c0ffc0';
-      isCorrectH = true;
-
-      correctCount++;       // count this correct answer
-      updateProgress();     // refresh progress bar
-
-      setTimeout(() => {
-        console.log('Switching sections');
-        sectionH.style.display = 'none';
-        sectionI.style.display = 'block';
-      }, 1000);
-    } else {
-      resultH.textContent = '❌ Try again.';
-      resultH.style.color = 'red';
-      selectedBtnH.style.backgroundColor = '#ffc0c0';
-    }
-  });
-  // Section I
-
-  if (sectionI) {
-  console.log('sectionI exists:', sectionI);
-  sectionI.querySelectorAll('.option').forEach(button => {
-    button.addEventListener('click', () => {
-      selectedBtnI = button;
-      console.log('Button clicked:', selectedBtnI);
-      sectionI.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-      button.style.backgroundColor = '#d0eaff';
-    });
-  });
-  }
-
-if (checkAnswerBtnI) {
-  console.log('checkAnswerBtnI exists:', checkAnswerBtnI);
-  checkAnswerBtnI.addEventListener('click', () => {
-    console.log('Check Answer button clicked');
-    if (!selectedBtnI) {
-      console.log('selectedBtnI is not set');
-      return;
-    }
-
-    console.log('selectedBtnI:', selectedBtnI);
-    console.log('selectedBtnI.dataset.correct:', selectedBtnI?.dataset.correct);
-
-    if (selectedBtnI.dataset.correct === "true") {
-      resultI.textContent = '✅ Correct!';
-      resultI.style.color = 'green';
-      selectedBtnI.style.backgroundColor = '#c0ffc0';
-      isCorrectI = true;
-
-      correctCount++;       // count this correct answer
-      updateProgress();     // refresh progress bar
-
-      setTimeout(() => {
-        console.log('Switching sections');
-        sectionI.style.display = 'none';
-        sectionJ.style.display = 'block';
-      }, 1000);
-    } else {
-      resultI.textContent = '❌ Try again.';
-      resultI.style.color = 'red';
-      selectedBtnI.style.backgroundColor = '#ffc0c0';
-    }
-  });
-}
- // Section J
-
- if (sectionJ) {
-  console.log('sectionI exists:', sectionJ);
-  sectionJ.querySelectorAll('.option').forEach(button => {
-    button.addEventListener('click', () => {
-      selectedBtnJ = button;
-      console.log('Button clicked:', selectedBtnJ);
-      sectionJ.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-      button.style.backgroundColor = '#d0eaff';
-    });
-  });
-  }
-
-if (checkAnswerBtnJ) {
-  console.log('checkAnswerBtnI exists:', checkAnswerBtnJ);
-  checkAnswerBtnJ.addEventListener('click', () => {
-    console.log('Check Answer button clicked');
-    if (!selectedBtnJ) {
-      console.log('selectedBtnI is not set');
-      return;
-    }
-
-    console.log('selectedBtnJ:', selectedBtnJ);
-    console.log('selectedBtnJ.dataset.correct:', selectedBtnI?.dataset.correct);
-
-    if (selectedBtnJ.dataset.correct === "true") {
-      resultJ.textContent = '✅ Correct!';
-      resultJ.style.color = 'green';
-      selectedBtnJ.style.backgroundColor = '#c0ffc0';
-      isCorrectJ = true;
-
-      correctCount++;       // count this correct answer
-      updateProgress();     // refresh progress bar
-
-      setTimeout(() => {
-        console.log('Switching sections');
-        sectionJ.style.display = 'none';
-        sectionK.style.display = 'block';
-      }, 1000);
-    } else {
-      resultJ.textContent = '❌ Try again.';
-      resultJ.style.color = 'red';
-      selectedBtnJ.style.backgroundColor = '#ffc0c0';
-    }
-  });
-}
- // Section K
-
- if (sectionK) {
-  console.log('sectionK exists:', sectionK);
-  sectionK.querySelectorAll('.option').forEach(button => {
-    button.addEventListener('click', () => {
-      selectedBtnK = button;
-      console.log('Button clicked:', selectedBtnK);
-      sectionK.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-      button.style.backgroundColor = '#d0eaff';
-    });
-  });
-  }
-
-if (checkAnswerBtnK) {
-  console.log('checkAnswerBtnK exists:', checkAnswerBtnK);
-  checkAnswerBtnK.addEventListener('click', () => {
-    console.log('Check Answer button clicked');
-    if (!selectedBtnK) {
-      console.log('selectedBtnK is not set');
-      return;
-    }
-
-    console.log('selectedBtnK:', selectedBtnK);
-    console.log('selectedBtnK.dataset.correct:', selectedBtnK?.dataset.correct);
-
-    if (selectedBtnK.dataset.correct === "true") {
-      resultK.textContent = '✅ Correct!';
-      resultK.style.color = 'green';
-      selectedBtnK.style.backgroundColor = '#c0ffc0';
-      isCorrectK = true;
-
-      correctCount++;       // count this correct answer
-      updateProgress();     // refresh progress bar
-
-      setTimeout(() => {
-        console.log('Switching sections');
-        sectionK.style.display = 'none';
-        sectionL.style.display = 'block';
-      }, 1000);
-    } else {
-      resultK.textContent = '❌ Try again.';
-      resultK.style.color = 'red';
-      selectedBtnK.style.backgroundColor = '#ffc0c0';
-    }
-  });
-}
- // Section L
-
- if (sectionL) {
-  console.log('sectionL exists:', sectionL);
-  sectionL.querySelectorAll('.option').forEach(button => {
-    button.addEventListener('click', () => {
-      selectedBtnL = button;
-      console.log('Button clicked:', selectedBtnL);
-      sectionL.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-      button.style.backgroundColor = '#d0eaff';
-    });
-  });
-  }
-
-if (checkAnswerBtnL) {
-  console.log('checkAnswerBtnL exists:', checkAnswerBtnL);
-  checkAnswerBtnL.addEventListener('click', () => {
-    console.log('Check Answer button clicked');
-    if (!selectedBtnL) {
-      console.log('selectedBtnL is not set');
-      return;
-    }
-
-    console.log('selectedBtnL:', selectedBtnL);
-    console.log('selectedBtnL.dataset.correct:', selectedBtnL?.dataset.correct);
-
-    if (selectedBtnL.dataset.correct === "true") {
-      resultL.textContent = '✅ Correct!';
-      resultL.style.color = 'green';
-      selectedBtnL.style.backgroundColor = '#c0ffc0';
-      isCorrectL = true;
-
-      correctCount++;       // count this correct answer
-      updateProgress();     // refresh progress bar
-
-      setTimeout(() => {
-        console.log('Switching sections');
-        sectionL.style.display = 'none';
-        sectionM.style.display = 'block';
-      }, 1000);
-    } else {
-      resultL.textContent = '❌ Try again.';
-      resultL.style.color = 'red';
-      selectedBtnL.style.backgroundColor = '#ffc0c0';
-    }
-  });
-}
- // Section M
-
- if (sectionM) {
-  console.log('sectionM exists:', sectionM);
-  sectionM.querySelectorAll('.option').forEach(button => {
-    button.addEventListener('click', () => {
-      selectedBtnM = button;
-      console.log('Button clicked:', selectedBtnM);
-      sectionM.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-      button.style.backgroundColor = '#d0eaff';
-    });
-  });
-  }
-
-if (checkAnswerBtnM) {
-  console.log('checkAnswerBtnM exists:', checkAnswerBtnM);
-  checkAnswerBtnM.addEventListener('click', () => {
-    console.log('Check Answer button clicked');
-    if (!selectedBtnM) {
-      console.log('selectedBtnM is not set');
-      return;
-    }
-
-    console.log('selectedBtnM:', selectedBtnM);
-    console.log('selectedBtnM.dataset.correct:', selectedBtnM?.dataset.correct);
-
-    if (selectedBtnM.dataset.correct === "true") {
-      resultM.textContent = '✅ Correct!';
-      resultM.style.color = 'green';
-      selectedBtnM.style.backgroundColor = '#c0ffc0';
-      isCorrectM = true;
-
-      correctCount++;       // count this correct answer
-      updateProgress();     // refresh progress bar
-
-      setTimeout(() => {
-        console.log('Switching sections');
-        sectionM.style.display = 'none';
-        sectionO.style.display = 'block';
-      }, 1000);
-    } else {
-      resultM.textContent = '❌ Try again.';
-      resultM.style.color = 'red';
-      selectedBtnM.style.backgroundColor = '#ffc0c0';
-    }
-  });
-}
- // Section O
-
- if (sectionO) {
-  console.log('sectionM exists:', sectionO);
-  sectionO.querySelectorAll('.option').forEach(button => {
-    button.addEventListener('click', () => {
-      selectedBtnO = button;
-      console.log('Button clicked:', selectedBtnO);
-      sectionO.querySelectorAll('.option').forEach(btn => btn.style.backgroundColor = '');
-      button.style.backgroundColor = '#d0eaff';
-    });
-  });
-  }
-
-if (checkAnswerBtnO) {
-  console.log('checkAnswerBtnO exists:', checkAnswerBtnO);
-  checkAnswerBtnO.addEventListener('click', () => {
-    console.log('Check Answer button clicked');
-    if (!selectedBtnO) {
-      console.log('selectedBtnO is not set');
-      return;
-    }
-
-    console.log('selectedBtnO:', selectedBtnO);
-    console.log('selectedBtnO.dataset.correct:', selectedBtnO?.dataset.correct);
-
-    if (selectedBtnO.dataset.correct === "true") {
-      resultO.textContent = '✅ Correct!';
-      resultO.style.color = 'green';
-      selectedBtnO.style.backgroundColor = '#c0ffc0';
-      isCorrectO = true;
-
-      correctCount++;       // count this correct answer
-      updateProgress();     // refresh progress bar
-
-      setTimeout(() => {
-        console.log('Switching sections');
-        sectionO.style.display = 'none';
-        sectionP.style.display = 'block';
-      }, 1000);
-    } else {
-      resultO.textContent = '❌ Try again.';
-      resultO.style.color = 'red';
-      selectedBtnO.style.backgroundColor = '#ffc0c0';
-    }
-  });
-}
-}
-// Percentage Basic Phrases
-
-
-
-
-</script>
-<script>
-  // Collect quiz sections in order
+  document.getElementById("b2")?.addEventListener("click", ()=> showTopSection('intro'));
+  document.getElementById("b1")?.addEventListener("click", ()=> showTopSection('in'));
+  document.getElementById("b3")?.addEventListener("click", ()=> showTopSection('vocabulary'));
+  document.getElementById("b4")?.addEventListener("click", ()=> showTopSection('grammar'));
+  document.getElementById("b5")?.addEventListener("click", ()=> showTopSection('listen'));
+  document.getElementById("b6")?.addEventListener("click", ()=> showTopSection('read'));
+  
+  /* ================== QUIZ SECTIONS (order matters) ================== */
   const QUIZ = [
     document.getElementById('B'),
     document.getElementById('C'),
@@ -1296,7 +703,7 @@ if (checkAnswerBtnO) {
   ];
   
   function hideAllQuizzes(){ QUIZ.forEach(s => s && (s.style.display='none')); }
-  function resetQuizSection(section){
+  function resetVisuals(section){
     if(!section) return;
     section.querySelectorAll('.option').forEach(b=> b.style.backgroundColor='');
     const res = section.querySelector('#result, .result');
@@ -1304,45 +711,100 @@ if (checkAnswerBtnO) {
   }
   
   let idx = 0; // current quiz index
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const quizNav = document.getElementById('quizNav');
+  const answeredCorrectly = Array(QUIZ.length).fill(false);
   
-  function showQuiz(i){
-    hideAllQuizzes();
-    QUIZ.forEach(resetQuizSection); // optional: comment out if you want to keep answers when navigating
-    idx = Math.max(0, Math.min(QUIZ.length - 1, i));
-    QUIZ[idx].style.display = 'block';
-    quizNav.style.display = 'flex';
-    prevBtn.disabled = (idx === 0);
-    nextBtn.textContent = (idx === QUIZ.length - 1) ? 'Finish' : 'Next';
-  }
-  
-  prevBtn?.addEventListener('click', ()=> showQuiz(idx - 1));
-  nextBtn?.addEventListener('click', ()=>{
-    if (idx === QUIZ.length - 1) {
-      // Finished: go back to Basic Phrases overview
-      quizNav.style.display = 'none';
-      document.getElementById('intro').style.display = 'block';
-      hideAllQuizzes();
-    } else {
-      showQuiz(idx + 1);
-    }
-  });
-  
-  // Start lesson button should call showQuiz(0)
-  document.getElementById('startBtn')?.addEventListener('click', ()=>{
-    document.getElementById('intro').style.display = 'none';
+  /* ================== START BUTTON ================== */
+  const startBtn = document.getElementById('startBtn');
+  const introSection = document.getElementById('intro');
+  startBtn?.addEventListener('click', ()=>{
+    introSection && (introSection.style.display = 'none');
+    QUIZ.forEach(resetVisuals);
     showQuiz(0);
   });
   
-  // IMPORTANT: sidebar buttons must hide quizzes too
-  ['b1','b2','b3','b4','b5','b6'].forEach(id=>{
-    document.getElementById(id)?.addEventListener('click', ()=>{
-      hideAllQuizzes();
-      quizNav.style.display = 'none';
+  /* ================== SHOW ONE QUIZ SECTION ================== */
+  function showQuiz(i){
+    hideAllQuizzes();
+    idx = Math.max(0, Math.min(QUIZ.length - 1, i));
+    const section = QUIZ[idx];
+    if (!section) return;
+  
+    // Ensure its Next is disabled until correct
+    const nextBtn = section.querySelector('#next');
+    if (nextBtn) nextBtn.disabled = !answeredCorrectly[idx];
+  
+    section.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  /* ================== WIRE EACH SECTION ================== */
+  QUIZ.forEach((section, i)=>{
+    if(!section) return;
+  
+    // 1) Select option logic
+    let selectedBtn = null;
+    section.querySelectorAll('.option').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        selectedBtn = btn;
+        section.querySelectorAll('.option').forEach(b=> b.style.backgroundColor='');
+        btn.style.backgroundColor = '#d0eaff';
+      });
+    });
+  
+    // 2) Check Answer button (id starts with checkAnswerBtn)
+    const checkBtn = section.querySelector('[id^="checkAnswerBtn"]');
+    const resultEl = section.querySelector('#result, .result');
+    const nextBtn = section.querySelector('#next');
+  
+    // Disable Next initially
+    if (nextBtn) nextBtn.disabled = true;
+  
+    checkBtn?.addEventListener('click', ()=>{
+      if(!selectedBtn) return;
+      const isCorrect = selectedBtn.dataset.correct === 'true';
+  
+      if (isCorrect){
+        if (resultEl){ resultEl.textContent = '✅ Correct!'; resultEl.style.color = 'green'; }
+        selectedBtn.style.backgroundColor = '#c0ffc0';
+  
+        // Count once per section
+        if (!answeredCorrectly[i]) {
+          answeredCorrectly[i] = true;
+          correctCount++;
+          updateProgress();
+        }
+  
+        // Enable Next for this section
+        if (nextBtn) nextBtn.disabled = false;
+  
+      } else {
+        if (resultEl){ resultEl.textContent = '❌ Try again.'; resultEl.style.color = 'red'; }
+        selectedBtn.style.backgroundColor = '#ffc0c0';
+        if (nextBtn) nextBtn.disabled = true;
+      }
+    });
+  
+    // 3) Next button → go to next section (only if enabled)
+    nextBtn?.addEventListener('click', ()=>{
+      if (!answeredCorrectly[i]) return; // extra safety
+      if (i === QUIZ.length - 1){
+        // Finished → show overview again
+        hideAllQuizzes();
+        if (introSection) introSection.style.display = 'block';
+      } else {
+        showQuiz(i + 1);
+      }
     });
   });
+  
+  /* ================== DEFAULT STATE ================== */
+  hideAllQuizzes();      // hide all on load
+  // Leave Intro visible until Start is clicked
+  </script>
+  
+  
+  
+
   </script>
   
 

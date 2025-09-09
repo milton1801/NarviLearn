@@ -132,9 +132,22 @@ a:hover {
 #before svg{
 fill:black
 }
-#next{
+#nt button{
+  margin-left: 21%;
   margin-top: -6%;
-  margin-left: 20%;
+  background-color: transparent;
+  border: none;
+  color: black;
+  display: flex;
+  font-size: 25px;
+  border-radius: 5px;
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  align-items: center;
+}
+#nt button:hover{
+  background-color: whitesmoke;
 }
 #intro{
   margin-left: 23%;
