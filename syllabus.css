@@ -207,6 +207,7 @@ align-content: center;
 display: flex;
 justify-content: center;
 align-items: center; 
+
 }
 #start button:hover{
   background-color: blue;
@@ -215,11 +216,31 @@ align-items: center;
   color: white;
   text-decoration: none;
 }
+#continueb button{
+  background-color: #3F00FF;
+width: 235px;
+color: white;
+height: 50px;
+margin-top: -50px;
+font-size: 20px;
+align-content: center;
+display: flex;
+justify-content: center;
+align-items: center; 
+display: none;
+}
+#continueb button:hover{
+  background-color: blue;
+}
+#continueb a{
+  color: white;
+  text-decoration: none;
+}
 #in{
   margin-left: 20%;
   margin-top: -50%;
   font-size: 30px;
-  display: none;
+
 }
 #in1{
   font-size: 25px;
