@@ -662,29 +662,65 @@
   </div>
   
   <!-- Vocabulary Questions Start  -->
-    <!-- Numero 1 Vocabulary-->
-    <div id="AB">
-      <p id="AB">Common Expressions</p>
-      <div id="ABB">Vocabulary</div>
-      <ul id="ab">
-        <li>Greetings</li>
-        <li>Numbers and Counting</li>
-        <li>Days</li>
-        <li>Colors</li>
-      </ul>
-    
-      <p id="trans">Translate the Phrase</p>
-      <p id="ab">What is "Goodbye" in Spanish?</p>
-    
-      <div id="abp2">
-        <input type ="text">
-      </div>
-      <div id="aba1">
-        <button id="checkAnswerBtn12">Check Answer</button>
-      </div>
-      <div id="nt">
-      <button id="next">Next</button>
-    </div>
+   <!-- Numero 1 Vocabulary -->
+<div id="AB" class="vocab-quiz">
+  <p id="ABH" class="section-title">Common Expressions</p>
+  <div id="ABB">Vocabulary</div>
+
+  <ul id="abList">
+    <li>Greetings</li>
+    <li>Numbers and Counting</li>
+    <li>Days</li>
+    <li>Colors</li>
+  </ul>
+
+  <p id="trans">Translate the Phrase</p>
+  <p id="abPrompt">What is "Goodbye" in Spanish?</p>
+
+  <div id="abp2">
+    <input id="abAnswer" type="text">
+  </div>
+
+  <div id="aba1">
+    <button id="checkAB">Check Answer</button>
+  </div>
+
+  <div id="nt">
+    <button id="nextAB">Next</button>
+  </div>
+</div> <!-- ✅ CLOSE AB -->
+
+<!-- Numero 2 Vocabulary -->
+<div id="BB" class="vocab-quiz" hidden>
+  <p class="section-title">Common Expressions</p>
+  <div class="section-tag">Vocabulary</div>
+  <ul class="mini-topics">
+    <li>Greetings</li>
+    <li>Numbers and Counting</li>
+    <li>Days</li>
+    <li>Colors</li>
+  </ul>
+
+  <p class="trans">Translate the Phrase</p>
+  <p class="prompt">What is "Thank You" in Spanish?</p>
+
+  <div id="bbp2">
+    <input id="bbAnswer" type="text" autocomplete="off">
+  </div>
+
+  <div id="bba1">
+    <button id="checkBB">Check Answer</button>
+  </div>
+
+  <div class="nav">
+    <button id="nextBB" disabled>Next</button>
+  </div>
+
+  <p id="resultBB"></p>
+</div>
+
+
+
 
 
 <!-- Correct Answer D -->
@@ -838,132 +874,158 @@
   <!-- Vocabulary script beg -->
   <!-- Number1 -->
   <script>
-    // Utility: hide sections by id
-    function hideSections(ids){
-      ids.forEach(id=>{
-        const el = document.getElementById(id);
-        if(el) el.style.display = 'none';
+    document.addEventListener('DOMContentLoaded', () => {
+      /* ========= Utilities ========= */
+      const hide = ids => ids.forEach(id => document.getElementById(id)
+        ?.style.setProperty('display','none','important'));
+      const show = id => document.getElementById(id)
+        ?.style.setProperty('display','block','important');
+    
+      // Make sure both vocab sections participate in show/hide groups
+      ['AB','BB'].forEach(id => document.getElementById(id)?.classList.add('vocab-quiz'));
+    
+      /* ========= Vocabulary (sidebar + start) ========= */
+      const vocabIntro    = document.getElementById('vocabulary');      // overview
+      const vocabStartBtn = document.querySelector('#vocabulary #starts button');
+      const vocabSidebar  = document.getElementById('b3');               // sidebar item
+    
+      vocabSidebar?.addEventListener('click', (e)=>{
+        e.preventDefault();
+        hide(['intro','in','grammar','listen','read','B','AB','BB']);  // hide others + quiz
+        show('vocabulary');                                             // show vocab overview
+        window.scrollTo({top:0, behavior:'smooth'});
       });
-    }
     
-    // ===== Vocabulary =====
-    const vocabIntro    = document.getElementById('vocabulary');
-    const vocabQuestion = document.getElementById('AB');   // first vocab question
-    const vocabStartBtn = document.querySelector('#vocabulary #starts button');
-    const vocabSidebar  = document.getElementById('b3');   // sidebar button "Vocabulary"
+      vocabStartBtn?.addEventListener('click', (e)=>{
+        e.preventDefault();
+        hide(['vocabulary','BB']);   // hide overview (and BB if it was open)
+        show('AB');                  // show first vocab question
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
     
-    if (vocabQuestion) vocabQuestion.style.display = 'none';
+      /* ========= Basic Phrases (sidebar + start) ========= */
+      const bpIntro    = document.getElementById('intro');               // BP overview
+      const bpStartBtn = document.querySelector('#intro #startBtn');
+      const bpSidebar  = document.getElementById('b2');
     
-    vocabSidebar?.addEventListener('click', (e)=>{
-      e.preventDefault();
-      hideSections(['intro','in','grammar','listen','read','B']); // hide others
-      if (vocabQuestion) vocabQuestion.style.display = 'none';
-      if (vocabIntro) vocabIntro.style.display = 'block';
-    });
+      bpSidebar?.addEventListener('click', (e)=>{
+        e.preventDefault();
+        hide(['vocabulary','in','grammar','listen','read','AB','BB','B']); // hide others + vocab quiz
+        show('intro');                                                     // show BP overview
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
     
-    vocabStartBtn?.addEventListener('click',(e)=>{
-      e.preventDefault();
-      if (vocabIntro) vocabIntro.style.display = 'none';
-      if (vocabQuestion) vocabQuestion.style.display = 'block';
-    });
+      bpStartBtn?.addEventListener('click',(e)=>{
+        e.preventDefault();
+        hide(['intro']);
+        show('B');                                               // first BP question
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
     
-    // ===== Basic Phrases =====
-    const bpIntro    = document.getElementById('intro');  // Basic Phrases intro
-    const bpQuestion = document.getElementById('B');      // first BP question
-    const bpStartBtn = document.querySelector('#intro #startBtn');
-    const bpSidebar  = document.getElementById('b2');     // sidebar button "Basic Phrases"
+      /* ========= Helpers for answer checking ========= */
+      const norm = s => (s||'')
+        .normalize('NFD').replace(/\p{Diacritic}/gu,'')
+        .trim().toLowerCase();
     
-    if (bpQuestion) bpQuestion.style.display = 'none';
-    
-    bpSidebar?.addEventListener('click',(e)=>{
-      e.preventDefault();
-      hideSections(['vocabulary','in','grammar','listen','read','AB']); // hide others
-      if (bpQuestion) bpQuestion.style.display = 'none';
-      if (bpIntro) bpIntro.style.display = 'block';
-    });
-    
-    bpStartBtn?.addEventListener('click',(e)=>{
-      e.preventDefault();
-      if (bpIntro) bpIntro.style.display = 'none';
-      if (bpQuestion) bpQuestion.style.display = 'block';
-    });
-    </script>
-    <!-- Check answer button 1 -->
-    <script>
-      // --- helpers ---
-      function normalizeText(str){
-        return (str || "")
-          .normalize("NFD")               // split accents
-          .replace(/\p{Diacritic}/gu,"")  // remove accents
-          .trim()
-          .toLowerCase();
+      function decorateField(el, ok){
+        if (!el) return;
+        el.style.border = ok ? '2px solid green' : '2px solid red';
+        el.style.backgroundColor = ok ? '#d4fcd4' : '#fcd4d4';
       }
-      
-      // --- wire the AB section ---
+    
+      /* ========= AB (Goodbye) ========= */
       (function setupAB(){
-        const abSection = document.querySelector('div#AB');
-        if (!abSection) return;
-      
-        const input   = abSection.querySelector('#abp2 input');
-        const check   = abSection.querySelector('#checkAnswerBtn12');
-        const nextBtn = abSection.querySelector('#nt #next');
-      
-        // Add a feedback line if you don't have one yet
-        let result = abSection.querySelector('#resultAB, .result');
-        if (!result){
-          result = document.createElement('p');
-          result.id = 'resultAB';
-          abSection.appendChild(result);
-        }
-      
-        // accepted answers
-        const correct = new Set(["adios","chao","chau","chap"]); // "adiós" normalizes to "adios"
-      
-        // lock Next initially
+        const ab = document.getElementById('AB');
+        if (!ab) return;
+    
+        const input   = ab.querySelector('#abAnswer, #abp2 input');
+        const check   = ab.querySelector('#checkAB, #checkAnswerBtn12');
+        const nextBtn = ab.querySelector('#nextAB, #nt #next');
+    
+        let result = ab.querySelector('#resultAB');
+        if (!result){ result = document.createElement('p'); result.id = 'resultAB'; ab.appendChild(result); }
+    
+        const okSet = new Set(['adios','chao','chau','ciao','chap']);   // accepted
+    
         if (nextBtn) nextBtn.disabled = true;
-      
+    
         function showResult(ok){
-          if (ok){
-            result.textContent = '✅ Correct!';
-            result.style.color = 'green';
-            if (input){
-              input.style.border = '2px solid green';
-              input.style.backgroundColor = '#d4fcd4';
-            }
-            if (nextBtn) nextBtn.disabled = false;
-          } else {
-            result.textContent = '❌ Try again.';
-            result.style.color = 'red';
-            if (input){
-              input.style.border = '2px solid red';
-              input.style.backgroundColor = '#fcd4d4';
-            }
-            if (nextBtn) nextBtn.disabled = true;
-          }
+          decorateField(input, ok);
+          result.textContent = ok ? '✅ Correct!' : '❌ Try again.';
+          result.style.color = ok ? 'green' : 'red';
+          if (nextBtn) nextBtn.disabled = !ok;
         }
-      
+    
         check?.addEventListener('click', ()=>{
-          if (!input) return;
-          const val = normalizeText(input.value);
-          if (!val){
-            result.textContent = '🙋‍♀️ Type an answer first.';
+          const v = norm(input?.value);
+          if (!v){
+            result.textContent = 'Type an answer first.';
             result.style.color = 'orange';
             if (nextBtn) nextBtn.disabled = true;
             return;
           }
-          showResult(correct.has(val));
+          showResult(okSet.has(v));
         });
-      
-        // allow Enter key to check
-        input?.addEventListener('keydown', (e)=>{
-          if (e.key === 'Enter') {
-            e.preventDefault();
-            check?.click();
-          }
+    
+        input?.addEventListener('keydown', e=>{
+          if (e.key === 'Enter'){ e.preventDefault(); check?.click(); }
+        });
+    
+        // Next in AB → show BB (only if unlocked)
+        nextBtn?.addEventListener('click', e=>{
+          e.preventDefault();
+          if (nextBtn.disabled) return;   // guard: only after correct
+          hide(['AB']);
+          show('BB');
+    
+          // reset BB UI
+          const bbInput  = document.getElementById('bbAnswer') || document.querySelector('#BB #bbp2 input');
+          const bbResult = document.getElementById('resultBB');
+          const nextBB   = document.getElementById('nextBB');
+          if (bbInput){ bbInput.value=''; bbInput.style.border=''; bbInput.style.backgroundColor=''; bbInput.focus(); }
+          if (bbResult){ bbResult.textContent=''; bbResult.style.color=''; }
+          if (nextBB) nextBB.disabled = true;
+    
+          window.scrollTo({top:0, behavior:'smooth'});
         });
       })();
-      </script>
-AB      
+    
+      /* ========= BB (Thank you) ========= */
+      (function setupBB(){
+        const bb = document.getElementById('BB');
+        if (!bb) return;
+    
+        const input   = document.getElementById('bbAnswer') || bb.querySelector('#bbp2 input');
+        const check   = document.getElementById('checkBB')   || bb.querySelector('#checkBB');
+        const nextBtn = document.getElementById('nextBB');
+    
+        let result = document.getElementById('resultBB') || bb.querySelector('#resultBB');
+        if (!result){ result = document.createElement('p'); result.id = 'resultBB'; bb.appendChild(result); }
+    
+        if (nextBtn) nextBtn.disabled = true;
+    
+        check?.addEventListener('click', ()=>{
+          const ok = norm(input?.value) === 'gracias';         // accepts “gracias/Gracias”
+          decorateField(input, ok);
+          result.textContent = ok ? '✅ Correct!' : '❌ Try again.';
+          result.style.color = ok ? 'green' : 'red';
+          if (nextBtn) nextBtn.disabled = !ok;
+        });
+    
+        input?.addEventListener('keydown', e=>{
+          if (e.key === 'Enter'){ e.preventDefault(); check?.click(); }
+        });
+    
+        // TODO: wire nextBtn to show the next vocab section when you add it
+        // nextBtn?.addEventListener('click', ()=> { hide(['BB']); show('CC'); });
+      })();
+    });
+    </script>
+    
+      
+      
+      
+      
       
     
 
